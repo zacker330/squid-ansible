@@ -1,0 +1,5 @@
+---
+# defaults file for squid
+squid:
+  host: "{{ httpproxy.host }}"
+  port: "{{ httpproxy.port }}"

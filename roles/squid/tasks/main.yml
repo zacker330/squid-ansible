@@ -1,0 +1,23 @@
+---
+# tasks file for squid
+- name: install
+  yum:
+    name: "squid"
+    state: present
+
+- template:
+    src: "squid.conf"
+    dest: "/etc/squid/squid.conf"
+    owner: root
+    group: root
+    mode: "0600"
+  notify:
+    - "restart squid"
+
+- meta: flush_handlers
+
+
+- name: start squid
+  service:
+    name: squid
+    state: started

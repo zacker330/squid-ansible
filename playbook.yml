@@ -1,0 +1,6 @@
+---
+- hosts: squid
+  become: true
+  gather_facts: no
+  roles:
+    - role: "squid"
